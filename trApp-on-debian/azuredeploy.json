@@ -124,8 +124,8 @@
   },
   "variables": {
     "lowerCaseDNSName": "[toLower(parameters('dnsNameForPublicIP'))]",
-    "imagePublisher": "Canonical",
-    "imageOffer": "UbuntuServer",
+    "imagePublisher": "credativ",
+    "imageOffer": "Debian",
     "OSDiskName": "osdiskforlinuxsimple",
     "newStorageAccountName": "[concat(variables('lowerCaseDNSName'), 'storage')]",
     "networkSecurityGroupName": "[concat(variables('lowerCaseDNSName'), 'nsg')]",
@@ -136,7 +136,7 @@
     "storageAccountType": "Standard_LRS",
     "publicIPAddressName": "minecraftpublicip",
     "publicIPAddressType": "Dynamic",
-    "ubuntuOSVersion": "15.10",
+    "sku": "7",
     "vmStorageAccountContainerName": "vhds",
     "vmName": "minecraftvm",
     "vmSize": "Standard_A1",
@@ -280,7 +280,7 @@
           "imageReference": {
             "publisher": "[variables('imagePublisher')]",
             "offer": "[variables('imageOffer')]",
-            "sku": "[variables('ubuntuOSVersion')]",
+            "sku": "[variables('sku')]",
             "version": "latest"
           },
           "osDisk": {
